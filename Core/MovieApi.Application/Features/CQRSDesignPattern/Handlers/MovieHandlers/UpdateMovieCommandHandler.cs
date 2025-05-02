@@ -15,7 +15,7 @@ namespace MovieApi.Application.Features.CQRSDesignPattern.Handlers.MovieHandlers
         {
             _movieContext = movieContext;
         }
-        public async void Handler(UpdateMovieCommand command)
+        public async Task Handler(UpdateMovieCommand command)
         {
             var value = await _movieContext.Movies.FindAsync(command.MovieId);
 
