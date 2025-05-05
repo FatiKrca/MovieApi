@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MovieApi.Application.Features.CQRSDesignPattern.Commands.MovieCommands
+﻿namespace MovieApi.Application.Features.CQRSDesignPattern.Commands.MovieCommands
 {
+    // Komut (Command) sınıfı: Var olan bir filmi güncelleme işlemi için kullanılır.
     public class UpdateMovieCommand
     {
         public int MovieId { get; set; }

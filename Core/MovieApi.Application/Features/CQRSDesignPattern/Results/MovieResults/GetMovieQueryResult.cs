@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿ 
 namespace MovieApi.Application.Features.CQRSDesignPattern.Results.MovieResults
 {
+    // Sonuç sınıfı: GetMovieQuery sorgusunun sonucunu temsil eder.
+    // Bu sınıf, tüm filmlerin bilgilerini tutar ve genellikle sorgu işleme sonrası döndürülen veriyi taşır.
     public class GetMovieQueryResult
     {
         public int MovieId { get; set; }

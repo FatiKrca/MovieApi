@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿ 
 
 namespace MovieApi.Application.Features.CQRSDesignPattern.Commands.MovieCommands
 {
+    // Komut (Command) sınıfı: Yeni bir film oluşturma işlemi için kullanılır.
     public class CreateMovieCommand
     {
          public string Title { get; set; }

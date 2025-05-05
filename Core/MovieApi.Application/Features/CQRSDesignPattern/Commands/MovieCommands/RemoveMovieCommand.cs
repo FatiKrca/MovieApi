@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace MovieApi.Application.Features.CQRSDesignPattern.Commands.MovieCommands
 {
+    // Komut (Command) sınıfı: Bir filmi silme işlemi için kullanılır.
     public class RemoveMovieCommand
     {
         public RemoveMovieCommand(int movieId)
@@ -17,3 +14,4 @@ namespace MovieApi.Application.Features.CQRSDesignPattern.Commands.MovieCommands
 
     }
 }
+
