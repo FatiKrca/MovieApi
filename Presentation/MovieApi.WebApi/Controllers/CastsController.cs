@@ -21,10 +21,10 @@ namespace MovieApi.WebApi.Controllers
 
         // GET: api/casts -> Tüm cast (oyuncu) listesini alır.
         [HttpGet]
-        public IActionResult CastList()
+        public async Task<IActionResult> CastList()
         {
             // GetCastQuery komutunu MediatR ile gönderiyoruz ve tüm cast verilerini alıyoruz.
-            var value = _mediator.Send(new GetCastQuery());
+            var value =  await _mediator.Send(new GetCastQuery());
 
             // Ok() ile 200 OK yanıtı ve veri döndürülür.
             return Ok(value);
@@ -32,10 +32,10 @@ namespace MovieApi.WebApi.Controllers
 
         // POST: api/casts -> Yeni bir oyuncu (cast) ekler.
         [HttpPost]
-        public IActionResult CreateCast(CreateCastCommand command)
+        public async Task<IActionResult> CreateCast(CreateCastCommand command)
         {
             // CreateCastCommand komutunu MediatR ile gönderiyoruz. Bu komut, yeni bir oyuncu ekler.
-            _mediator.Send(command);
+            await _mediator.Send(command);
 
             // İşlem başarılı olduğunda "Ekleme İşlemi Başarılı" mesajını döneriz.
             return Ok("Ekleme İşlemi Başarılı");
@@ -43,10 +43,10 @@ namespace MovieApi.WebApi.Controllers
 
         // DELETE: api/casts -> Belirli bir oyuncuyu siler.
         [HttpDelete]
-        public IActionResult DeleteCast(int id)
+        public async Task<IActionResult> DeleteCast(int id)
         {
             // Silinecek oyuncu ID'sini kullanarak RemoveCastCommand komutunu gönderiyoruz.
-            _mediator.Send(new RemoveCastCommand(id));
+            await _mediator.Send(new RemoveCastCommand(id));
 
             // İşlem başarılı olduğunda "Silme İşlemi Başarılı" mesajını döneriz.
             return Ok("Silme İşlemi Başarılı");
@@ -54,10 +54,10 @@ namespace MovieApi.WebApi.Controllers
 
         // GET: api/casts/GetCastById -> Belirli bir oyuncuyu ID'ye göre getirir.
         [HttpGet("GetCastById")]
-        public IActionResult GetCastById(int id)
+        public async Task<IActionResult> GetCastById(int id)
         {
             // GetCastByIdQuery komutunu, belirtilen ID'ye sahip oyuncunun bilgilerini almak için gönderiyoruz.
-            var value = _mediator.Send(new GetCastByIdQuery(id));
+            var value = await _mediator.Send(new GetCastByIdQuery(id));
 
             // Ok() ile oyuncunun bilgilerini döndürürüz.
             return Ok(value);
@@ -65,10 +65,10 @@ namespace MovieApi.WebApi.Controllers
 
         // PUT: api/casts -> Var olan bir oyuncuyu günceller.
         [HttpPut]
-        public IActionResult UpdateCast(UpdateCastCommand command)
+        public async Task<IActionResult> UpdateCast(UpdateCastCommand command)
         {
             // UpdateCastCommand komutunu gönderiyoruz. Bu komut, oyuncu bilgisini günceller.
-            _mediator.Send(command);
+            await _mediator.Send(command);
 
             // İşlem başarılı olduğunda "Güncelleme İşlemi Başarılı" mesajını döneriz.
             return Ok("Güncelleme İşlemi Başarılı");

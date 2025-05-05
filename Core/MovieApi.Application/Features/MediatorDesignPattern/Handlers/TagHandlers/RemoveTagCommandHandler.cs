@@ -22,7 +22,7 @@ namespace MovieApi.Application.Features.MediatorDesignPattern.Handlers.TagHandle
             var values = await _context.Tags.FindAsync(request.TagId);
 
             // Etiket bulunmuşsa, silme işlemi yapılır.
-            _context.Tags.Remove(values);
+             _context.Tags.Remove(values);
 
             // Değişiklikler veritabanına kaydedilir.
             await _context.SaveChangesAsync();

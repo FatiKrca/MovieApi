@@ -1,6 +1,8 @@
+using System.Reflection;
 using Microsoft.OpenApi.Models;
 using MovieApi.Application.Features.CQRSDesignPattern.Handlers.CategoryHandlers;
 using MovieApi.Application.Features.CQRSDesignPattern.Handlers.MovieHandlers;
+using MovieApi.Application.Features.MediatorDesignPattern.Handlers.TagHandlers;
 using MovieApi.Persistence.Context;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +23,14 @@ builder.Services.AddScoped<GetMovieByIdQueryHandler>();     // Film id'sine göre
 builder.Services.AddScoped<GetMovieQueryHandler>();         // Tüm filmleri sorgulayan handler
 builder.Services.AddScoped<RemoveMovieCommandHandler>();    // Film silme komutunu iþleyen handler
 builder.Services.AddScoped<UpdateMovieCommandHandler>();    // Film güncelleme komutunu iþleyen handler
+#endregion
+
+// MediatR'ý ekliyoruz. Bu, CQRS (Command Query Responsibility Segregation) desenini uygulamak için kullanýlýr.
+#region
+//eski .net sürümlerinde
+//builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(GetTagQueryHandler).Assembly));
 #endregion
 
 // MVC Controller'larý ekliyoruz. API endpoint'lerini yöneten sýnýflar.

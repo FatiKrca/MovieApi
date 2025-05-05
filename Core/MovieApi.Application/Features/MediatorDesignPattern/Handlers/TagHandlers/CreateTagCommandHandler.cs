@@ -20,7 +20,7 @@ namespace MovieApi.Application.Features.MediatorDesignPattern.Handlers.TagHandle
         public async Task Handle(CreateTagCommand request, CancellationToken cancellationToken)
         {
             // Yeni bir Tag (etiket) nesnesi oluşturur ve veritabanına ekler.
-            _context.Tags.Add(new Tag
+            await _context.Tags.AddAsync(new Tag
             {
                 Title = request.Title
             });
