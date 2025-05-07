@@ -1,25 +1,38 @@
-﻿{
-    "$schema": "https://json.schemastore.org/launchsettings.json",
-    "profiles": {
-        // HTTP için yapılandırma
-        "http": {
-            "commandName": "Project", // Projeyi çalıştırmak için "dotnet run" komutunu kullanır.
-            "dotnetRunMessages": true, // "dotnet run" ile çalışırken mesajları gösterir.
-            "launchBrowser": true, // Tarayıcıyı otomatik olarak açar.
-            "applicationUrl": "http://localhost:5039", // Uygulamanın çalışacağı adres ve port.
-            "environmentVariables": {
-                "ASPNETCORE_ENVIRONMENT": "Development" // Uygulamanın geliştirme ortamında çalışmasını sağlar.
-            }
-        },
-        // HTTPS için yapılandırma
-        "https": {
-            "commandName": "Project", // Projeyi çalıştırmak için "dotnet run" komutunu kullanır.
-            "dotnetRunMessages": true, // "dotnet run" ile çalışırken mesajları gösterir.
-            "launchBrowser": true, // Tarayıcıyı otomatik olarak açar.
-            "applicationUrl": "https://localhost:7263;http://localhost:5039", // Uygulamanın çalışacağı HTTPS ve HTTP adresleri.
-            "environmentVariables": {
-                "ASPNETCORE_ENVIRONMENT": "Development" // Uygulamanın geliştirme ortamında çalışmasını sağlar.
-            }
-        }
+{
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:5039"
+    },
+    "https": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7263;http://localhost:5039"
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
     }
+  },
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:60362/",
+      "sslPort": 44353
+    }
+  }
 }

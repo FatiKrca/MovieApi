@@ -29,7 +29,7 @@ namespace MovieApi.Application.Features.CQRSDesignPattern.Handlers.MovieHandlers
                 Rating = command.Rating,
                 Description = command.Description,
                 Duration = command.Duration,
-                RelaseDate = command.RelaseDate,
+                RelaseDate = command.ReleaseDate,
                 CreatedYear = command.CreatedYear,
                 Status = command.Status
             });

@@ -31,7 +31,7 @@ namespace MovieApi.Application.Features.CQRSDesignPattern.Handlers.MovieHandlers
                 Description = value.Description,
                 CoverImageUrl = value.CoverImageUrl,
                 CreatedYear = value.CreatedYear,
-                RelaseDate = value.RelaseDate,
+                ReleaseDate = value.RelaseDate,
                 Duration = value.Duration,
                 Rating = value.Rating,
                 Status = value.Status

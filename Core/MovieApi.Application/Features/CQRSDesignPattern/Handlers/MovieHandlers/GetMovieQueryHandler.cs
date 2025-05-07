@@ -29,7 +29,7 @@ namespace MovieApi.Application.Features.CQRSDesignPattern.Handlers.MovieHandlers
                 Description = x.Description,
                 CoverImageUrl = x.CoverImageUrl,
                 CreatedYear = x.CreatedYear,
-                RelaseDate = x.RelaseDate,
+                ReleaseDate = x.RelaseDate,
                 Duration = x.Duration,
                 Rating = x.Rating,
                 Status = x.Status
